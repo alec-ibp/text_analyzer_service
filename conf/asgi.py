@@ -23,6 +23,7 @@ def get_asgi_application() -> ASGIApp:
     app: ASGIApp = FastAPI(
         title=app_name,
         version=settings.VERSION,
+        debug=settings.DEBUG,
         on_startup=[_startup_event],
         docs_url=docs_url,
         redoc_url=redoc_url,

@@ -29,6 +29,6 @@ RDS_PASSWORD: str = os.environ.get("RDS_PASSWORD", "postgres")
 RDS_PORT: str = os.environ.get("RDS_PORT", "5432")
 
 # CORS
-CORS_ALLOWED_METHODS: list[str] = ["*"]
-CORS_ALLOWED_HEADERS: list[str] = ["*"]
+CORS_ALLOWED_METHODS: list[str] = os.environ.get("CORS_ALLOWED_METHODS", "*").split(",")
+CORS_ALLOWED_HEADERS: list[str] = os.environ.get("CORS_ALLOWED_METHODS", "*").split(",")
 CORS_ALLOWED_HOSTS: list[str] = os.environ.get("CORS_ALLOWED_HOSTS", "").split(",")
